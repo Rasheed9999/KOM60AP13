@@ -1,0 +1,153 @@
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~ (master)
+$ cd desktop
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop (master)
+$ mkdir kiran
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop (master)
+$ cd kiran
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git init
+Initialized empty Git repository in C:/Users/kiran varma/Desktop/kiran/.git/
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ echo "first file" > first.txt
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ echo "second file" > second.txt
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        first.txt
+        second.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git add .
+warning: LF will be replaced by CRLF in first.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in second.txt.
+The file will have its original line endings in your working directory
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git ls-files
+first.txt
+second.txt
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   first.txt
+        new file:   second.txt
+
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git commit -m "our first commit"
+[master (root-commit) 00fa115] our first commit
+ 2 files changed, 2 insertions(+)
+ create mode 100644 first.txt
+ create mode 100644 second.txt
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ ^C
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git cat-file -p 00fa115
+tree 6f9fc20fce40a32e4352cbff8184e5d7325ea45a
+author kiran <askiran266@gmail.com> 1602484680 +0530
+committer kiran <askiran266@gmail.com> 1602484680 +0530
+
+our first commit
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git cat-file -s 00fa115
+173
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git cat-file -t 00fa115
+commit
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git cat-file -p 6f9fc
+100644 blob 303ff981c488b812b6215f7db7920dedb3b59d9a    first.txt
+100644 blob 1c59427adc4b205a270d8f810310394962e79a8b    second.txt
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git log
+commit 00fa1154ee441791b228d74824e90340beea64d7 (HEAD -> master)
+Author: kiran <askiran266@gmail.com>
+Date:   Mon Oct 12 12:08:00 2020 +0530
+
+    our first commit
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ echo "third file" >third.txt
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git ls-files
+first.txt
+second.txt
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        third.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git add third.txt
+warning: LF will be replaced by CRLF in third.txt.
+The file will have its original line endings in your working directory
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   third.txt
+
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git commit -m "second commit"
+[master 74a9316] second commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 third.txt
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$ git cat-file -p 74a9316
+tree c8a18dba1ac9c6b55b0e882945bfdc39ddffd768
+parent 00fa1154ee441791b228d74824e90340beea64d7
+author kiran <askiran266@gmail.com> 1602485665 +0530
+committer kiran <askiran266@gmail.com> 1602485665 +0530
+
+second commit
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$  git cat-file -p c8a18d
+100644 blob 303ff981c488b812b6215f7db7920dedb3b59d9a    first.txt
+100644 blob 1c59427adc4b205a270d8f810310394962e79a8b    second.txt
+100644 blob 667bb3858a056cc96e79c0c3b1edfb60135c2359    third.txt
+
+kiran varma@DESKTOP-3TDMMJP MINGW64 ~/desktop/kiran (master)
+$
